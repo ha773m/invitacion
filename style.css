@@ -413,63 +413,62 @@ body {
     opacity: 0.95;
 }
 /* ==========================================================================
-   5. SECCIONES Y MAQUETACIÓN DE TARJETAS (ARMONIZACIÓN INTEGRAL)
-   ========================================================================== */
-/* ==========================================================================
-   OPTIMIZACIÓN DEL MENÚ DE TARJETAS (CUADRÍCULA DE 2X2 PARA CELULARES)
+   CORRECCIÓN DEL MENÚ: MÁS COMPACTO Y CONSERVANDO EL DISEÑO DE GALA
    ========================================================================== */
 
+/* Esto mantiene las tarjetas en una sola columna en cel pero mucho más bajitas */
 .menu-grid {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    /* En computadoras se verán las 4 en una fila, en cel se adaptará */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 0 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio más cerrado entre tarjetas */
+    padding: 0 20px;
 }
 
 .menu-card {
-    text-decoration: none;
-    /* Reducimos el padding para hacerlas más bajitas y compactas */
-    padding: 30px 15px; 
+    text-decoration: none !important;
+    padding: 20px 15px !important; /* Tarjetas mucho más delgadas y compactas */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: rgba(255, 255, 255, 0.03); /* Mantiene tu fondo oscuro original */
+    border: 1px solid rgba(212, 175, 55, 0.3); /* Tu borde dorado sutil */
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-.card-icon, .menu-card i, .menu-card svg {
-    /* Íconos un poco más sutiles para equilibrar el tamaño */
-    font-size: 2rem; 
-    margin-bottom: 12px;
-    background: var(--dorado-metal);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    transition: transform 0.4s ease;
-}
-
+/* Forzamos a que el texto del menú siga siendo dorado de gala */
 .menu-card h3 {
-    /* Ajustamos el tamaño del texto para que quepa perfectamente */
-    font-size: 1.25rem !important;
+    color: #d4af37 !important; /* Dorado original */
+    font-size: 1.3rem !important;
+    margin: 5px 0 0 0 !important;
+    font-family: inherit;
 }
 
-/* REGLA ESPECÍFICA PARA CELULARES (Fuerza el diseño de 2 columnas) */
-@media (max-width: 768px) {
-    .menu-grid {
-        grid-template-columns: repeat(2, 1fr) !important; /* Dos tarjetas por fila */
-        gap: 15px; /* Espacio más compacto entre ellas */
-    }
-    
-    .menu-card {
-        padding: 25px 10px; /* Aún más compactas en pantallas chicas */
-    }
-    
-    .card-icon, .menu-card i, .menu-card svg {
-        font-size: 1.8rem; /* Íconos perfectos para cel */
-    }
+/* Forzamos a que los íconos sigan siendo dorados */
+.menu-card i, .menu-card svg, .card-icon {
+    font-size: 2rem !important;
+    color: #d4af37 !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+    margin-bottom: 5px !important;
+}
+
+/* Regresa la cuenta regresiva a su diseño original (horizontal) */
+.countdown-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    gap: 15px !important;
+}
+
+.countdown-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
 }
 /* ==========================================================================
    6. COMPOSICIÓN DEL CARRUSEL DE MEMORIAS (OBRA DE ARTE)
