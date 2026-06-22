@@ -413,63 +413,228 @@ body {
     opacity: 0.95;
 }
 /* ==========================================================================
-   CORRECCIÓN DEL MENÚ: MÁS COMPACTO Y CONSERVANDO EL DISEÑO DE GALA
+   5. SECCIONES Y MAQUETACIÓN DE TARJETAS (ARMONIZACIÓN INTEGRAL)
    ========================================================================== */
+section, .mensaje, .evento, .galeria, .ubicacion, .cierre {
+    padding: 120px 25px;
+    position: relative;
+    z-index: 1;
+}
 
-/* Esto mantiene las tarjetas en una sola columna en cel pero mucho más bajitas */
+/* Remoción del Ruido Visual Translucido por Bloques de Gala Armónicos */
+.menu-card, .evento-card, .ubicacion-card, .contador-card, section.scroll-reveal {
+    background: linear-gradient(135deg, rgba(34, 7, 17, 0.92) 0%, rgba(16, 3, 8, 0.98) 100%) !important;
+    border: 1px solid transparent !important;
+    background-clip: padding-box !important;
+    border-image: var(--dorado-metal) 1 !important; 
+    box-shadow: var(--shadow-gala) !important;
+    backdrop-filter: blur(15px);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s;
+}
+
+.menu-card:hover, .evento-card:hover, .ubicacion-card:hover, .contador-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(191, 149, 63, 0.15) !important;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.titulo-seccion span, .detalle {
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: .8rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    opacity: 0.6;
+}
+
+/* Títulos Interiores: Corregidos de oscuros a claros */
+.titulo-seccion h2, .mensaje h2, .evento-card h2, .ubicacion-card h2, .contador-card h2, .cierre h3, .menu-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-top: 10px;
+    background: var(--dorado-metal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.4);
+}
+
+/* GRID DEL ÍNDICE */
 .menu-grid {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Espacio más cerrado entre tarjetas */
-    padding: 0 20px;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
 }
 
 .menu-card {
-    text-decoration: none !important;
-    padding: 20px 15px !important; /* Tarjetas mucho más delgadas y compactas */
+    text-decoration: none;
+    padding: 50px 30px;
     text-align: center;
+}
+
+/* Iconos Dorados en el Índice */
+.card-icon, .menu-card i, .menu-card svg {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: var(--dorado-metal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+.menu-card:hover .card-icon {
+    transform: scale(1.15);
+}
+
+/* CONTENIDOS TEXTUALES */
+.contenedor {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.mensaje p, .cierre p, body p, .info-item p {
+    margin-top: 30px;
+    line-height: 2;
+    font-size: 1.1rem;
+    color: var(--texto-claro) !important;
+    font-weight: 300;
+}
+
+/* DETALLES INTERNOS DEL EVENTO */
+.evento-card, .ubicacion-card {
+    max-width: 800px;
+    margin: auto;
+    padding: 70px 50px;
+}
+
+.evento-info {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* Cajas internas de datos corregidas (Sin fondo blanco ruidoso) */
+.info-item {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(191, 149, 63, 0.15) !important;
+    padding: 25px;
+    border-radius: 4px;
+    text-align: left;
+}
+
+/* Iconos de datos en Dorado */
+.info-item strong {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 10px;
+    background: var(--dorado-metal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.info-item strong i {
+    color: var(--dorado) !important;
+    -webkit-text-fill-color: initial;
+}
+
+/* CONFIGURACIÓN DEL CONTADOR */
+.contador-card {
+    max-width: 850px;
+    margin: auto;
+    padding: 70px 30px;
+}
+
+.tiempo {
+    margin-top: 45px;
+    display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.03); /* Mantiene tu fondo oscuro original */
-    border: 1px solid rgba(212, 175, 55, 0.3); /* Tu borde dorado sutil */
-    border-radius: 8px;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.tiempo div {
+    min-width: 130px;
+    position: relative;
+}
+
+.tiempo div:not(:last-child)::after {
+    content: "·";
+    position: absolute;
+    right: -20px;
+    top: 15%;
+    font-size: 3rem;
+    color: var(--dorado);
+    opacity: 0.4;
+}
+
+.tiempo span {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    color: var(--dorado-brillante);
+}
+
+.tiempo p {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--texto-mutado);
+}
+
+/* BOTONES DE MAPA Y RETORNO */
+.btn-mapa {
+    display: inline-block;
+    margin-top: 40px;
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 0px;
+    border: none;
+    background: var(--dorado-metal);
+    color: #0D0206 !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    box-shadow: 0 10px 30px rgba(179, 135, 40, 0.35);
     transition: all 0.3s ease;
 }
 
-/* Forzamos a que el texto del menú siga siendo dorado de gala */
-.menu-card h3 {
-    color: #d4af37 !important; /* Dorado original */
-    font-size: 1.3rem !important;
-    margin: 5px 0 0 0 !important;
-    font-family: inherit;
+.btn-mapa:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(179, 135, 40, 0.55);
+    opacity: 0.95;
 }
 
-/* Forzamos a que los íconos sigan siendo dorados */
-.menu-card i, .menu-card svg, .card-icon {
-    font-size: 2rem !important;
-    color: #d4af37 !important;
-    background: none !important;
-    -webkit-text-fill-color: initial !important;
-    margin-bottom: 5px !important;
+
+.volver {
+    display: inline-block;
+    margin-top: 40px;
+    color: var(--dorado-brillante) !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: opacity 0.3s;
+}
+.volver:hover {
+    opacity: 0.7;
 }
 
-/* Regresa la cuenta regresiva a su diseño original (horizontal) */
-.countdown-container {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    gap: 15px !important;
-}
-
-.countdown-item {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-}
 /* ==========================================================================
    6. COMPOSICIÓN DEL CARRUSEL DE MEMORIAS (OBRA DE ARTE)
    ========================================================================== */
