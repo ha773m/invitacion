@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
             loader.style.opacity = '0';
             loader.style.visibility = 'hidden';
         }
-    }, 1200);
+    }, 3000);
 
     // Acción al presionar el botón "Descubrir Invitación"
     if (btnDiscover) {
