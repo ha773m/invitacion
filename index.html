@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduación de Mildreth Constanza</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <audio id="bg-music" src="audio/everything.mp3" loop></audio>
+
+    <div id="premium-loader">
+        <div class="loader-content">
+            <div class="loader-monogram">MC</div>
+            <div class="loader-bar-container">
+                <div class="loader-bar"></div>
+            </div>
+            <p class="loader-text">Cargando Experiencia</p>
+        </div>
+    </div>
+
+    <div id="welcome-screen">
+        <div class="welcome-bg" style="background-image: linear-gradient(rgba(74, 0, 15, 0.45), rgba(74, 0, 15, 0.75)), url('img/portada.jpeg');"></div>
+        <div class="welcome-content">
+            <span class="welcome-subtitle">Invitación Exclusiva</span>
+            <div class="gold-divider-flowers">
+                <span class="line"></span>
+                <i class="fa-solid fa-feather-pointed"></i>
+                <span class="line"></span>
+            </div>
+            <h1 class="welcome-title">Mildreth Constanza</h1>
+            <h2 class="welcome-title-surname">Hattem Pérez</h2>
+            <p class="welcome-tag">Licenciada en Educación Preescolar</p>
+            
+            <button id="btn-discover" class="btn-premium">
+                <span class="btn-text">Descubrir Invitación</span>
+                <span class="btn-subtext">Activar Música <i class="fa-solid fa-volume-high"></i></span>
+                <div class="btn-shine"></div>
+            </button>
+        </div>
+    </div>
+
+    <button id="music-control" class="music-fab hidden">
+        <div class="fab-circle">
+            <i id="music-icon" class="fa-solid fa-music"></i>
+            <div class="music-waves">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </button>
+
+    <div class="particulas">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <main id="main-content" class="content-hidden">
+
+        <section class="hero">
+            <div class="overlay"></div>
+            <div class="contenido">
+                <span class="generacion">
+                    GENERACIÓN 2022 - 2026
+                </span>
+                <h1>
+                    Mildreth Constanza<br>
+                    Hattem Pérez
+                </h1>
+                <p class="carrera">
+                    Licenciatura en Educación Preescolar
+                </p>
+                <p class="escuela">
+                    ENESMAPO 04
+                </p>
+                <a href="#indice" class="boton-principal">
+                    Descubrir invitación
+                </a>
+            </div>
+        </section>
+
+        <section id="indice" class="indice scroll-reveal">
+            <div class="titulo-seccion">
+                <span>Explorar</span>
+                <h2>Mi Invitación</h2>
+            </div>
+
+            <div class="menu-grid">
+                <a href="#mensaje" class="menu-card">
+                    <div class="card-icon"><i class="fa-regular fa-envelope-open"></i></div>
+                    <h3>Mensaje</h3>
+                </a>
+
+                <a href="#evento" class="menu-card">
+                    <div class="card-icon"><i class="fa-regular fa-calendar-check"></i></div>
+                    <h3>Evento</h3>
+                </a>
+
+                <a href="#galeria" class="menu-card">
+                    <div class="card-icon"><i class="fa-regular fa-images"></i></div>
+                    <h3>Galería</h3>
+                </a>
+
+                <a href="#ubicacion" class="menu-card">
+                    <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <h3>Ubicación</h3>
+                </a>
+            </div>
+        </section>
+
+        <section id="mensaje" class="mensaje scroll-reveal">
+            <div class="contenedor">
+                <span class="detalle">Un momento especial</span>
+                <h2>
+                    Una etapa que llega a su meta
+                </h2>
+                <p>
+                    Con gran emoción y gratitud, hoy celebro el cierre de una etapa
+                    que marcó mi vida para siempre.
+                </p>
+                <p>
+                    Cada aprendizaje, cada reto y cada experiencia me han permitido
+                    llegar hasta este momento tan especial.
+                </p>
+                <p>
+                    Me haría muy feliz contar con tu presencia para celebrar juntos
+                    este logro que guardaré siempre en mi corazón.
+                </p>
+                <a href="#indice" class="volver">
+                    Volver al índice
+                </a>
+            </div>
+        </section>
+
+        <section id="evento" class="evento scroll-reveal">
+            <div class="evento-card">
+                <span class="detalle">
+                    Información del evento
+                </span>
+                <h2>
+                    Mi Graduación
+                </h2>
+
+                <div class="evento-info">
+                    <div class="info-item">
+                        <strong><i class="fa-solid fa-user-graduate"></i> Carrera</strong>
+                        <p>Licenciatura en Educación Preescolar</p>
+                    </div>
+
+                    <div class="info-item">
+                        <strong><i class="fa-regular fa-calendar"></i> Fecha</strong>
+                        <p>15 de julio de 2026</p>
+                    </div>
+
+                    <div class="info-item">
+                        <strong><i class="fa-regular fa-clock"></i> Hora</strong>
+                        <p>5:00 PM</p>
+                    </div>
+
+                    <div class="info-item">
+                        <strong><i class="fa-solid fa-school"></i> Institución</strong>
+                        <p>ENESMAPO 04</p>
+                    </div>
+                </div>
+
+                <a href="#indice" class="volver">
+                    Volver al índice
+                </a>
+            </div>
+        </section>
+
+        <section id="contador" class="contador scroll-reveal">
+            <div class="contador-card">
+                <span class="detalle">
+                    Cuenta regresiva
+                </span>
+                <h2>
+                    Falta muy poco
+                </h2>
+
+                <div class="tiempo">
+                    <div>
+                        <span id="dias">0</span>
+                        <p>Días</p>
+                    </div>
+                    <div>
+                        <span id="horas">0</span>
+                        <p>Horas</p>
+                    </div>
+                    <div>
+                        <span id="minutos">0</span>
+                        <p>Min</p>
+                    </div>
+                    <div>
+                        <span id="segundos">0</span>
+                        <p>Seg</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="scroll-reveal">
+            <div class="titulo-seccion">
+                <span>Recuerdos</span>
+                <h2>Un sueño hecho realidad</h2>
+            </div>
+
+            <div class="carrusel">
+                <button class="flecha" onclick="anterior()"><i class="fa-solid fa-chevron-left"></i></button>
+                <img src="img/portada.jpeg" id="fotoCarrusel" alt="Recuerdos">
+                <button class="flecha" onclick="siguiente()"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <div class="indicadores">
+                <span class="activo"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="#indice" class="volver">Volver al Índice</a>
+            </div>
+        </section>
+
+        <section id="ubicacion" class="ubicacion scroll-reveal">
+            <div class="ubicacion-card">
+                <span class="detalle">
+                    Lugar del evento
+                </span>
+                <h2>
+                    Salón Sindical Sección 26
+                </h2>
+                <p>
+                    Cárdenas, San Luis Potosí
+                </p>
+
+                <a href="https://maps.app.goo.gl/eB7AJBHsvLwmm77V6" target="_blank" class="btn-mapa">
+                    <i class="fa-solid fa-map-location-dot"></i> Ver ubicación
+                </a>
+
+                <br>
+                <a href="#indice" class="volver">
+                    Volver al índice
+                </a>
+            </div>
+        </section>
+
+        <section class="cierre scroll-reveal">
+            <p>
+                Gracias por acompañarme en este momento tan especial.
+                Cada paso, aprendizaje y desafío me ha traído hasta aquí,
+                y compartir esta celebración contigo hace que este logro
+                sea aún más significativo.
+            </p>
+            <h3>
+                Mildreth Constanza Hattem Pérez
+            </h3>
+            <span class="generacion-cierre">
+                Generación 2022 – 2026
+            </span>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
